@@ -19,4 +19,4 @@ __pycache__/
 *.bin
 
 # Machine-local tool permissions.
-.claude/settings.local.json
+.claude/
