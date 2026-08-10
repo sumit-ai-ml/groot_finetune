@@ -1,0 +1,23 @@
+{
+    "source": "Isaac-GR00T/demo_data/so101-table-cleanup",
+    "seed": 0,
+    "eval_fraction": 0.2,
+    "episodes": [
+        9,
+        12,
+        15,
+        16,
+        21,
+        28,
+        32,
+        33,
+        43,
+        44,
+        49,
+        59,
+        66,
+        71,
+        75,
+        76
+    ]
+}

@@ -1,0 +1,44 @@
+flash_attn is not installed. Falling back to sdpa attention. Install flash-attn for better performance: pip install flash-attn
+Total number of DiT parameters:  1091722240
+Total number of SelfAttentionTransformer parameters:  201433088
+======================================================================
+6a. TOP-LEVEL CHILDREN
+======================================================================
+  backbone                       Qwen3Backbone                          1523.5 M params
+  action_head                    Gr00tN1d7ActionHead                    1620.5 M params
+  TOTAL                                                                 3144.0 M params
+
+======================================================================
+6b. FUSED ATTENTION CHECK
+======================================================================
+  nn.MultiheadAttention modules: none -- safe
+
+  469 quantizable layers -> /home/sushi/Documents/groot_finetune/runs/phase7/layer_inventory.txt
+
+======================================================================
+6e. ROTATION COST: fan-in dimensions
+======================================================================
+  SRHT needs a power-of-2 fan-in; make_rotation() silently falls back
+  to a dense d x d QR otherwise, which is O(d^3) to build.
+  d=256         1 layers       0.4 M params   SRHT
+  d=1024       72 layers     201.3 M params   SRHT
+  d=1536      163 layers     688.1 M params   DENSE <-- O(d^3)
+  d=2048      149 layers    1150.0 M params   SRHT
+  d=4096       32 layers     201.3 M params   SRHT
+  d=6144       48 layers     503.3 M params   DENSE <-- O(d^3)
+  d=8192        4 layers      67.1 M params   SRHT
+
+  parameter mass needing DENSE rotation: 42.4%
+
+======================================================================
+6c. FAN-IN AUDIT
+======================================================================
+
+  --- WHOLE MODEL ---
+  verdict=good  layers=469  good=469 marginal=0 bad=0
+
+  --- backbone ---
+  verdict=good  layers=217  good=217 marginal=0 bad=0
+
+  --- action_head ---
+  verdict=good  layers=252  good=252 marginal=0 bad=0

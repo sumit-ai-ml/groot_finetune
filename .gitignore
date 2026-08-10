@@ -1,0 +1,22 @@
+# Model weights: ~12 GB per checkpoint, six of them.
+checkpoints/
+
+# External repositories, cloned not vendored. See README for pinned versions.
+Isaac-GR00T/
+Apexquant/
+
+# NVIDIA Performance Libraries, installed per-machine by activate_spark.sh.
+vendor/
+
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Anything that slipped through the two rules above.
+*.safetensors
+*.pt
+*.bin
+
+# Machine-local tool permissions.
+.claude/settings.local.json

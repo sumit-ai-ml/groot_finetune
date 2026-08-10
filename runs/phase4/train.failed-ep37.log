@@ -1,0 +1,105 @@
+/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/albumentations/__init__.py:13: UserWarning: A new version of Albumentations is available: 2.0.8 (you have 1.4.18). Upgrade using: pip install -U albumentations. To disable automatic update checks, set the environment variable NO_ALBUMENTATIONS_UPDATE to 1.
+  check_for_updates()
+/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/experiment/experiment.py:122: UserWarning: image_crop_size and image_target_size will be deprecated in the future. Please use shortest_image_edge and crop_fraction instead.
+  warnings.warn(
+08/10/2026 21:37:48 - INFO - Saved config to /home/sushi/Documents/groot_finetune/checkpoints/so101_ft/experiment_cfg
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLForConditionalGeneration is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLVisionModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLTextModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/model/modules/dit.py:255: FutureWarning: Accessing config attribute `compute_dtype` directly via 'AlternateVLDiT' object attribute is deprecated. Please access 'compute_dtype' over 'AlternateVLDiT's config object instead, e.g. 'unet.config.compute_dtype'.
+  embedding_dim=self.inner_dim, compute_dtype=self.compute_dtype
+/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/model/modules/dit.py:286: FutureWarning: Accessing config attribute `output_dim` directly via 'AlternateVLDiT' object attribute is deprecated. Please access 'output_dim' over 'AlternateVLDiT's config object instead, e.g. 'unet.config.output_dim'.
+  self.proj_out_2 = nn.Linear(self.inner_dim, self.output_dim)
+08/10/2026 21:37:49 - INFO - Using AlternateVLDiT for diffusion model
+Loaded modality config: examples/SO100/so100_config.py
+Total number of DiT parameters:  1091722240
+Total number of SelfAttentionTransformer parameters:  201433088
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.09s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.41it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.31it/s]
+08/10/2026 21:37:55 - INFO - Total parameters: 3,144,016,000
+08/10/2026 21:37:55 - INFO - Trainable parameters: 1,620,515,968 (51.54%)
+08/10/2026 21:37:55 - INFO - N1.7 letter_box_transform=False
+Initializing datasets:   0%|          | 0/1 [00:00<?, ?it/s]Initializing datasets: 100%|██████████| 1/1 [00:00<00:00, 134.49it/s]
+08/10/2026 21:38:04 - INFO - Overriding statistics for embodiment 'new_embodiment'
+08/10/2026 21:38:04 - INFO - Saved dataset statistics for inference
+08/10/2026 21:38:05 - INFO - 🚀 Starting training...
+Generating stats for demo_data/so101-table-cleanup-train
+Generated 36 shards for dataset ./demo_data/so101-table-cleanup-train
+Total steps: 36817, average shard length: 1022.6944444444445, shard length std: 30.486626798979366
+Current global step: 0
+Creating custom train dataloader
+  0%|          | 0/3000 [00:00<?, ?it/s]Casting fp32 inputs back to torch.bfloat16 for flash-attn compatibility.
+/home/sushi/.local/share/uv/python/cpython-3.12.13-linux-aarch64-gnu/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/3000 [00:27<23:12:39, 27.86s/it]  0%|          | 2/3000 [00:30<10:48:29, 12.98s/it]Traceback (most recent call last):
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/experiment/launch_finetune.py", line 130, in <module>
+    run(config)
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/experiment/experiment.py", line 367, in run
+    trainer.train(resume_from_checkpoint=config.training.resume_from_checkpoint)
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/experiment/trainer.py", line 248, in train
+    return super().train(resume_from_checkpoint=latest_checkpoint, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 2618, in _inner_training_loop
+    batch_samples, num_items_in_batch = self.get_batch_samples(epoch_iterator, num_batches, args.device)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 5654, in get_batch_samples
+    batch_samples.append(next(epoch_iterator))
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 741, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1518, in _next_data
+    return self._process_data(data, worker_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1586, in _process_data
+    data.reraise()
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torch/_utils.py", line 775, in reraise
+    raise exception
+IndexError: Caught IndexError in DataLoader worker process 2.
+Original Traceback (most recent call last):
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py", line 358, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 35, in fetch
+    data.append(next(self.dataset_iter))
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/data/dataset/sharded_mixture_dataset.py", line 432, in __iter__
+    self.finish_cache_shard()
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/data/dataset/sharded_mixture_dataset.py", line 480, in finish_cache_shard
+    self.curr_shard = self._cache_job.result()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/.local/share/uv/python/cpython-3.12.13-linux-aarch64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/.local/share/uv/python/cpython-3.12.13-linux-aarch64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/sushi/.local/share/uv/python/cpython-3.12.13-linux-aarch64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/data/dataset/sharded_single_step_dataset.py", line 292, in get_shard
+    episode_data = self.episode_loader[ep_idx]
+                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/data/dataset/lerobot_episode_loader.py", line 604, in __getitem__
+    video_data = self._load_video_data(episode_id, np.arange(actual_length))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/data/dataset/lerobot_episode_loader.py", line 442, in _load_video_data
+    video_data[image_key] = get_frames_by_indices(
+                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/utils/video_utils.py", line 76, in get_frames_by_indices
+    return decoder.get_frames_at(indices=indices).data.numpy()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torchcodec/decoders/_video_decoder.py", line 368, in get_frames_at
+    data, pts_seconds, duration_seconds = core.get_frames_at_indices(
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torchcodec/_core/ops.py", line 281, in get_frames_at_indices
+    return _get_frames_at_indices_tensor_input(decoder, frame_indices=frame_indices)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: Invalid frame index=550 for streamIndex=0; must be less than 550
+

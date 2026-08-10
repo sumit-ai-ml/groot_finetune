@@ -1,0 +1,48 @@
+/home/sushi/Documents/groot_finetune/Isaac-GR00T/.venv/lib/python3.12/site-packages/albumentations/__init__.py:13: UserWarning: A new version of Albumentations is available: 2.0.8 (you have 1.4.18). Upgrade using: pip install -U albumentations. To disable automatic update checks, set the environment variable NO_ALBUMENTATIONS_UPDATE to 1.
+  check_for_updates()
+/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/experiment/experiment.py:122: UserWarning: image_crop_size and image_target_size will be deprecated in the future. Please use shortest_image_edge and crop_fraction instead.
+  warnings.warn(
+08/10/2026 21:32:19 - INFO - Saved config to /home/sushi/Documents/groot_finetune/runs/phase3/smoke/experiment_cfg
+Loaded modality config: examples/SO100/so100_config.py
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [01:45<01:45, 105.85s/it]Fetching 2 files: 100%|██████████| 2/2 [01:45<00:00, 52.92s/it] 
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLForConditionalGeneration is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLVisionModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLTextModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/model/modules/dit.py:255: FutureWarning: Accessing config attribute `compute_dtype` directly via 'AlternateVLDiT' object attribute is deprecated. Please access 'compute_dtype' over 'AlternateVLDiT's config object instead, e.g. 'unet.config.compute_dtype'.
+  embedding_dim=self.inner_dim, compute_dtype=self.compute_dtype
+/home/sushi/Documents/groot_finetune/Isaac-GR00T/gr00t/model/modules/dit.py:286: FutureWarning: Accessing config attribute `output_dim` directly via 'AlternateVLDiT' object attribute is deprecated. Please access 'output_dim' over 'AlternateVLDiT's config object instead, e.g. 'unet.config.output_dim'.
+  self.proj_out_2 = nn.Linear(self.inner_dim, self.output_dim)
+08/10/2026 21:35:16 - INFO - Using AlternateVLDiT for diffusion model
+Total number of DiT parameters:  1091722240
+Total number of SelfAttentionTransformer parameters:  201433088
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.70it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.64it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.44it/s]
+08/10/2026 21:35:25 - INFO - Total parameters: 3,144,016,000
+08/10/2026 21:35:25 - INFO - Trainable parameters: 1,620,515,968 (51.54%)
+08/10/2026 21:35:25 - INFO - N1.7 letter_box_transform=False
+Initializing datasets:   0%|          | 0/1 [00:00<?, ?it/s]Initializing datasets: 100%|██████████| 1/1 [00:00<00:00, 52.71it/s]
+08/10/2026 21:35:35 - INFO - Overriding statistics for embodiment 'new_embodiment'
+08/10/2026 21:35:35 - INFO - Saved dataset statistics for inference
+08/10/2026 21:35:37 - INFO - 🚀 Starting training...
+Generating stats for demo_data/so101-table-cleanup-train
+Generated 36 shards for dataset ./demo_data/so101-table-cleanup-train
+Total steps: 36817, average shard length: 1022.6944444444445, shard length std: 30.486626798979366
+Current global step: 0
+Creating custom train dataloader
+  0%|          | 0/1 [00:00<?, ?it/s]Casting fp32 inputs back to torch.bfloat16 for flash-attn compatibility.
+/home/sushi/.local/share/uv/python/cpython-3.12.13-linux-aarch64-gnu/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+100%|██████████| 1/1 [00:22<00:00, 22.27s/it]                                             100%|██████████| 1/1 [00:50<00:00, 22.27s/it]100%|██████████| 1/1 [00:50<00:00, 50.08s/it]
+08/10/2026 21:36:35 - INFO - Model saved to /home/sushi/Documents/groot_finetune/runs/phase3/smoke
+08/10/2026 21:36:35 - INFO - Training completed!
+Rank 0, Worker 1: Caching shard...
+Rank 0, Worker 1: Wait for shard 18 in dataset 0 in 16.23 seconds
+Rank 0, Worker 1: Caching shard...
+Rank 0, Worker 0: Caching shard...
+Rank 0, Worker 0: Wait for shard 34 in dataset 0 in 16.95 seconds
+Rank 0, Worker 0: Caching shard...
+Copying experiment config directory /home/sushi/Documents/groot_finetune/runs/phase3/smoke/experiment_cfg to /home/sushi/Documents/groot_finetune/runs/phase3/smoke/checkpoint-1/experiment_cfg
+Copying processor directory /home/sushi/Documents/groot_finetune/runs/phase3/smoke/processor to /home/sushi/Documents/groot_finetune/runs/phase3/smoke/checkpoint-1
+Copying wandb_config.json from /home/sushi/Documents/groot_finetune/runs/phase3/smoke/wandb_config.json to /home/sushi/Documents/groot_finetune/runs/phase3/smoke/checkpoint-1/wandb_config.json
+{'train_runtime': 50.0822, 'train_samples_per_second': 0.08, 'train_steps_per_second': 0.02, 'train_loss': 1.0704448223114014}
